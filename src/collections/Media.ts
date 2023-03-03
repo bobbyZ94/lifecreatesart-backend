@@ -1,35 +1,38 @@
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from "payload/types";
 
 const Media: CollectionConfig = {
-  slug: 'media',
+  slug: "media",
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: 'title',
-      type: 'text',
-      label: { en: 'Title', de: 'Titel' },
+      name: "title",
+      type: "text",
+      label: { en: "Title", de: "Titel" },
       required: true,
     },
   ],
   upload: {
-    staticURL: '/media',
-    staticDir: 'media',
-    adminThumbnail: 'thumbnail',
-    mimeTypes: ['image/*'],
+    staticURL: "/media",
+    staticDir: "media",
+    adminThumbnail: "thumbnail",
+    mimeTypes: ["image/*"],
     formatOptions: {
-      format: 'webp',
+      format: "webp",
     },
     imageSizes: [
       {
-        name: 'thumbnail',
+        name: "thumbnail",
         width: 300,
         height: 300,
-        position: 'centre',
+        position: "centre",
+        formatOptions: {
+          format: "webp",
+        },
       },
-    ]
+    ],
   },
-}
+};
 
-export default Media
+export default Media;
