@@ -16,12 +16,12 @@ const start = async () => {
   payload.init({
     secret: process.env.PAYLOAD_SECRET,
     mongoURL: process.env.MONGODB_URI,
-    ...(process.env.ENVIRONMENT === "production" && {
-      mongoOptions: {
-        user: process.env.MONGODB_USER,
-        pass: process.env.MONGODB_PW,
-      },
-    }),
+    // ...(process.env.ENVIRONMENT === "production" && {
+    //   mongoOptions: {
+    //     user: process.env.MONGODB_USER,
+    //     pass: process.env.MONGODB_PW,
+    //   },
+    // }),
     express: app,
     onInit: () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`);
