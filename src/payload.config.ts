@@ -12,7 +12,9 @@ import Logo from "./components/Logo";
 import Icon from "./components/Icon";
 
 export default buildConfig({
-  serverURL: `${process.env.PAYLOAD_PUBLIC_HOST}:${process.env.PAYLOAD_PUBLIC_PORT}`,
+  // In dev mode only envs with PAYLOAD_PUBLIC prefix are permitted
+  // serverURL: `${process.env.PAYLOAD_PUBLIC_HOST}:${process.env.PAYLOAD_PUBLIC_PORT}`,
+  serverURL: "https://lifecreatesart-backend-production.up.railway.app:3000",
   admin: {
     user: Users.slug,
     meta: {
