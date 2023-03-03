@@ -8,6 +8,8 @@ import Showcase from "./collections/Showcase";
 import About from "./collections/About";
 import Settings from "./collections/Settings";
 import Legal from "./collections/Legal";
+import Logo from "./components/Logo";
+import Icon from "./components/Icon";
 
 export default buildConfig({
   ...(process.env.ENVIRONMENT === "development"
@@ -17,6 +19,22 @@ export default buildConfig({
       }),
   admin: {
     user: Users.slug,
+    meta: {
+      // browsertab name suffix
+      titleSuffix: " - Lifecreatesart",
+      // favicon for browsertab
+      favicon: "/assets/logo.jpg",
+      // image that appears in previews of shared links through admin panel/social media
+      ogImage: "/assets/logo.jpg",
+    },
+    components: {
+      graphics: {
+        // image component to be displayed as the logo on the Sign Up / Login view.
+        Logo,
+        // image component displayed above the Nav in the admin panel, often a condensed version of a full logo.
+        Icon,
+      },
+    },
   },
   telemetry: false,
   upload: {
