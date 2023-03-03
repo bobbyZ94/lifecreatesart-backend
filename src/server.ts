@@ -15,7 +15,7 @@ app.get("/", (_, res) => {
 const start = async () => {
   payload.init({
     secret: process.env.PAYLOAD_SECRET,
-    mongoURL: `mongodb://${process.env.MONGOHOST}:${process.env.MONGOPORT}`,
+    mongoURL: `${process.env.MONGOHOST}:${process.env.MONGOPORT}`,
     mongoOptions: {
       user: process.env.MONGOUSER,
       pass: process.env.MONGOPASSWORD,
