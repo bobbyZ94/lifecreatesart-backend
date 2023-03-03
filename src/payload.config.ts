@@ -12,11 +12,7 @@ import Logo from "./components/Logo";
 import Icon from "./components/Icon";
 
 export default buildConfig({
-  ...(process.env.ENVIRONMENT === "development"
-    ? { serverURL: "http://localhost:3000" }
-    : {
-        serverURL: "https://lifecreatesart-backend-production.up.railway.app",
-      }),
+  serverURL: `${process.env.PAYLOAD_PUBLIC_HOST}:${process.env.PAYLOAD_PUBLIC_PORT}`,
   admin: {
     user: Users.slug,
     meta: {
@@ -48,8 +44,14 @@ export default buildConfig({
     trustProxy: true,
   },
   maxDepth: 20,
-  csrf: ["https://lifecreatesart-backend-production.up.railway.app"],
-  cors: ["https://lifecreatesart-backend-production.up.railway.app"],
+  csrf: [
+    "https://lifecreatesart-backend-production.up.railway.app",
+    "http://localhost",
+  ],
+  cors: [
+    "https://lifecreatesart-backend-production.up.railway.app",
+    "http://localhost",
+  ],
   globals: [About, Settings, Legal],
   collections: [Articles, Showcase, Blog, Media, Users],
   typescript: {
