@@ -5,7 +5,7 @@ import Users from "./collections/Users";
 import Media from "./collections/Media";
 import Articles from "./collections/Articles";
 import Blog from "./collections/Blog";
-import Showcase from "./collections/Showcase";
+import Gallery from "./collections/Gallery";
 import About from "./collections/About";
 import Settings from "./collections/Settings";
 import Legal from "./collections/Legal";
@@ -59,7 +59,7 @@ export default buildConfig({
     "https://lifecreatesart-frontend-production.up.railway.app",
   ],
   globals: [About, Settings, Legal],
-  collections: [Articles, Showcase, Blog, Media, Users],
+  collections: [Articles, Gallery, Blog, Media, Users],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
