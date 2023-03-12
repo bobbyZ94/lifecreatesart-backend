@@ -15,8 +15,8 @@ import Icon from "./components/Icon";
 export default buildConfig({
   plugins: [cloudinaryPlugin()],
   // In dev mode only envs with PAYLOAD_PUBLIC prefix are permitted
-  serverURL: `${process.env.PAYLOAD_PUBLIC_HOST}:${process.env.PAYLOAD_PUBLIC_PORT}`,
-  // serverURL: "https://lifecreatesart-backend-production.up.railway.app",
+  // serverURL: `${process.env.PAYLOAD_PUBLIC_HOST}:${process.env.PAYLOAD_PUBLIC_PORT}`,
+  serverURL: "https://lifecreatesart-backend-production.up.railway.app",
   admin: {
     user: Users.slug,
     meta: {
