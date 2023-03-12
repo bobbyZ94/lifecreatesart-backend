@@ -14,24 +14,25 @@ const Media: CollectionConfig = {
     },
   ],
   upload: {
-    staticURL: "/media",
-    staticDir: "media",
-    adminThumbnail: "thumbnail",
-    mimeTypes: ["image/*"],
-    formatOptions: {
-      format: "webp",
-    },
-    imageSizes: [
-      {
-        name: "thumbnail",
-        width: 300,
-        height: 300,
-        position: "centre",
-        formatOptions: {
-          format: "webp",
-        },
-      },
-    ],
+    disableLocalStorage: true,
+    // staticURL: "/media",
+    // staticDir: "media",
+    // adminThumbnail: "thumbnail",
+    // mimeTypes: ["image/*"],
+    // formatOptions: {
+    //   format: "webp",
+    // },
+    // imageSizes: [
+    //   {
+    //     name: "thumbnail",
+    //     width: 300,
+    //     height: 300,
+    //     position: "centre",
+    //     formatOptions: {
+    //       format: "webp",
+    //     },
+    //   },
+    // ],
   },
 };
 

@@ -1,4 +1,5 @@
 import { buildConfig } from "payload/config";
+import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 import path from "path";
 import Users from "./collections/Users";
 import Media from "./collections/Media";
@@ -12,9 +13,10 @@ import Logo from "./components/Logo";
 import Icon from "./components/Icon";
 
 export default buildConfig({
+  plugins: [cloudinaryPlugin()],
   // In dev mode only envs with PAYLOAD_PUBLIC prefix are permitted
-  // serverURL: `${process.env.PAYLOAD_PUBLIC_HOST}:${process.env.PAYLOAD_PUBLIC_PORT}`,
-  serverURL: "https://lifecreatesart-backend-production.up.railway.app",
+  serverURL: `${process.env.PAYLOAD_PUBLIC_HOST}:${process.env.PAYLOAD_PUBLIC_PORT}`,
+  // serverURL: "https://lifecreatesart-backend-production.up.railway.app",
   admin: {
     user: Users.slug,
     meta: {
@@ -49,10 +51,12 @@ export default buildConfig({
   csrf: [
     "https://lifecreatesart-backend-production.up.railway.app",
     "http://localhost",
+    "https://lifecreatesart-frontend-production.up.railway.app",
   ],
   cors: [
     "https://lifecreatesart-backend-production.up.railway.app",
     "http://localhost",
+    "https://lifecreatesart-frontend-production.up.railway.app",
   ],
   globals: [About, Settings, Legal],
   collections: [Articles, Showcase, Blog, Media, Users],
